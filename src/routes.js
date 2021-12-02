@@ -16,6 +16,7 @@ routes.post('/sessions', SessionController.store)
 routes.use(authMiddlweares)
 routes.get('/products', ProductController.index)
 routes.post('/products', upload.single('file'), ProductController.store)
+routes.put('/products/:id', upload.single('file'), ProductController.update)
 
 routes.post('/categories', upload.single('file'), CategoryController.store)
 routes.get('/categories', upload.single('file'), CategoryController.index)
